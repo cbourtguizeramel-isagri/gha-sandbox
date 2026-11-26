@@ -20,7 +20,7 @@ jobs:
                 name: wright
                 path: app/out.txt
             - name: Override for one step
-            working-directory: .
-            run: pwd
+              working-directory: .
+              run: pwd
 
             
