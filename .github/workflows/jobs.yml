@@ -1,0 +1,12 @@
+name: Jobs
+on: workflow_dispatch
+jobs:
+    first:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "first run on $(hostname)"
+            - run: sleep 20
+    second:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "second run on $(hostname)"
