@@ -8,7 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo "first run on $(hostname)"
-            - run: sleep 20
+            - run: sleep 30
     second:
         runs-on: ubuntu-latest
         steps:
