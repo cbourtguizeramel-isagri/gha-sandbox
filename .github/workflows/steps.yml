@@ -8,11 +8,15 @@ jobs:
               run: ls -la
             - name: Checkout
               uses: actions/checkout@v4
+            - name: failing
+              run: exit 1
             - name: After Checkout
               run: |
                 ls -la
                 echo "I am in $(pwd)"
             - name: Set a variable
               run: export GREETING=hello
+            - name: failing
+              run: exit 1
             - name: Read it back
               run: echo $GREETING
