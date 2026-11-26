@@ -1,5 +1,8 @@
 name: Jobs
-on: workflow_dispatch
+on: 
+    workflow_dispatch:
+    push:
+        branches: [jobs]
 jobs:
     first:
         runs-on: ubuntu-latest
