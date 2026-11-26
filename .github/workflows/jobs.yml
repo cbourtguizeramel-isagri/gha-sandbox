@@ -7,7 +7,7 @@ jobs:
     first:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "first run on $(hostname)"
+            - run: echo "run on jobs"
             - run: sleep 30
     second:
         runs-on: ubuntu-latest
