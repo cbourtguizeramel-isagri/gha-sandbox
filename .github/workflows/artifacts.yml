@@ -1,0 +1,22 @@
+name: Artifacts
+on: workflow_dispatch
+jobs:
+    produce:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "reportv1" > repport.txt
+            - uses: actions/upload-artifacts@v4
+              with: 
+                    name: my-repport
+                    path: repport.txt
+                    file-not-found: error
+                    retention-day: 1
+    consume:
+        needs: produce
+        runs-on: ubuntu-latest
+        steps:
+            - run: cat repport.txt || echo "no file here"
+            - uses: actions/downloads-artifact@v4
+              with:
+                    name: my-repport
+            - run: cat repport.txt
