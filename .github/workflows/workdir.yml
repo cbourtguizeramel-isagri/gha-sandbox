@@ -1,0 +1,26 @@
+name: Workdir
+on: workflow_dispatch
+jobs:
+    where:
+        runs-on: ubuntu-latest
+        defaults:
+            run:
+                working-directory: app
+        steps:
+            - uses: actions/checkout@v4
+            - name: where am I
+              run: |
+                pwd
+                ls
+            - name: write a repport
+              run: echo "ok" > out.txt
+            - name: Upload, path without the folder
+              uses: actions/upload-artifact@v4
+              with:
+                name: wright
+                path: app/out.txt
+            - name: Override for one step
+            working-directory: .
+            run: pwd
+
+            
