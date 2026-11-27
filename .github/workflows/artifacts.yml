@@ -9,8 +9,8 @@ jobs:
               with: 
                     name: my-repport
                     path: repport.txt
-                    file-not-found: error
-                    retention-day: 1
+                    if-no-file-found: error
+                    retention-days: 1
     consume:
         needs: produce
         runs-on: ubuntu-latest
