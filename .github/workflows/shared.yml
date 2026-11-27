@@ -1,0 +1,19 @@
+name: Shared Greet
+on:
+    workflow_call:
+        inputs:
+            who:
+                description: who to call
+                required: true
+                type: string
+            shout:
+                description: use capital letter
+                required: false
+                type: boolean
+                default: false
+jobs:
+    greet:
+        runs-on: ubuntu-latest
+        steps:
+            - name: say it
+              run: echo "Hello ${{inputs.who}} (shout=${{inputs.shout}}) on ${{github.event_name}}"
